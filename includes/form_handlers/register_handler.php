@@ -98,7 +98,7 @@ if(isset($_POST['register_button'])){
 		//profile picture assignment
 		$defaults = "head_alizarin.png,head_amethyst.png, head_belize_hole.png, head_carrot.png, head_deep_blue.png, head_emerald.png, head_green_sea.png, head_nephritis.png, head_pete_river.png, head_pomegranate.png, head_pumpkin.png, head_red.png, head_sun_flower.png, head_turqoise.png, head_wet_asphalt.png, head_wisteria.png";
 		$defaults_arr = explode(",",$defaults);
-		$random = rand(0, count($defaults_arr));
+		$random = rand(0, count($defaults_arr)-1);
 		$profile_pic = "assets/images/profile_pics/defaults/".trim($defaults_arr[$random]);
 
 		// create user
