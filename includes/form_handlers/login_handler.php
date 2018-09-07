@@ -16,7 +16,8 @@ if(isset($_POST['login_button'])){
 
 		$_SESSION['username'] = $username;
 		$_SESSION['profile_pic'] = $profile_pic;
-
+		$_SESSION['success'] = true;
+		
 		$user_closed_query = mysqli_query($conn,"SELECT * FROM user WHERE email='$email' AND user_closed='yes'");
 		if(mysqli_num_rows($user_closed_query) ==1){
 			$reopen_account=mysqli_query($conn,"UPDATE user SET user_closed='no' WHERE email='$email'");
@@ -25,6 +26,7 @@ if(isset($_POST['login_button'])){
 		header("Location:index.php");
 		exit();
 	}else{
+		$_SESSION['success'] = false;
 		$error_array['log_failed'] ="Email or Password is incorrect !";
 	}
 
