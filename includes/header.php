@@ -36,7 +36,7 @@ if($loginFlag){
 				<a href="#">Social Network </a>
 		</div>
 		<nav>
-				<a href="#">
+				<a href="<?php echo $loggedInUser;?>">
 					<?php
 						echo $userRow['first_name']." ". $userRow['last_name'];
 					?>
@@ -57,5 +57,9 @@ if($loginFlag){
 				<a href="#">
 					<i class="fa fa-cog fa-lg"></i>
 				</a>
+				<a href="includes/handlers/logout.php">
+					<i class="fa fa-sign-out-alt fa-lg"></i>
+				</a>
 		</nav>
 	</div>
+	<div class="wrapper">
