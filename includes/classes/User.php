@@ -40,5 +40,13 @@ class User{
         else    
             return false;
     }
+    public function isFriend($username_to_check){
+        $usernameStr =",".$username_to_check.",";
+        if((strstr($this->user['friend_array'],$usernameStr)|| $this->user['friend_array'] == $usernameStr)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 ?>
