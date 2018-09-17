@@ -82,6 +82,18 @@ class Post{
                     }else{
                         $count++;
                     }
+                    ?>
+                        <script>
+                                function toggle<?php echo $id;?>(){
+                                    var element = document.getElementById("toggleComment<?php echo $id;?>");
+                                    if(element.style.display == "block"){
+                                            element.style.display="none";
+                                        }else{
+                                            element.style.display="block";
+                                        }
+                                    }
+                        </script>
+                    <?php
     
                     //time frame
                     $date_time_now = date("Y-m-d H:i:s");
@@ -136,7 +148,7 @@ class Post{
                     }
                     //post html
                     $str.="
-                        <div class='status_post'>
+                        <div class='status_post' onClick='javascript:toggle$id()'>
                             <div class='post_profile_pic'>
                                 <img src='$added_by_pic' alt='profile pic' width='50'/>
                             </div>
@@ -147,7 +159,11 @@ class Post{
                                 $body
                                 <br>
                             </div>
-                        </div> <hr>";
+                        </div>
+                        <div class='post_comment' id='toggleComment$id' style='display:none'>
+                            <iframe src='comment_frame.php?post_id=$id' id='comment_iframe' frameborder=0 frameborder=0 width='800px' style='width:600px;'></iframe>
+                        </div>
+                        <hr>";
 
                 } // end if condition
                 
