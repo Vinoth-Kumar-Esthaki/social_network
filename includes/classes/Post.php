@@ -31,6 +31,10 @@ class Post{
 
         }
     }
+    public function setLikes($total_likes,$post_id){
+        $query = mysqli_query($this->conn,"UPDATE post SET likes ='$total_likes' WHERE id='$post_id'");
+        return true;
+    }
     
     public function loadPostsFriends($data,$limit){
         $page = $data['page'];
@@ -170,6 +174,7 @@ class Post{
                             <div class='newsFeedOptions'>
                                 Comments ($comments_check_num)
                                 &nbsp;&nbsp;&nbsp;&nbsp;
+                                <iframe src='like.php?post_id=$id' id='like_iframe' frameborder=0></iframe>                                
                             </div>
                         </div>
                         <div class='post_comment' id='toggleComment$id' style='display:none'>

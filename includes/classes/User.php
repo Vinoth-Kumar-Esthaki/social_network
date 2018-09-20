@@ -30,6 +30,11 @@ class User{
         $query = mysqli_query($this->conn,"UPDATE user SET num_posts='$numPost' WHERE username='$username'");
         return true;
     }
+    public function setNumLikes($numLikes){
+        $username = $this->user['username'];
+        $query = mysqli_query($this->conn,"UPDATE user SET num_likes='$numLikes' WHERE username='$username'");
+        return true;
+    }
     public function isClosed(){
         $username = $this->user['username'];
         $query = mysqli_query($this->conn,"SELECT user_closed FROM user WHERE username='$username'");
