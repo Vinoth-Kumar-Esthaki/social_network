@@ -51,7 +51,7 @@ if($loginFlag){
 				<a href="#">
 					<i class="fa fa-bell fa-lg"></i>
 				</a>
-				<a href="#">
+				<a href="request.php">
 					<i class="fa fa-user fa-lg"></i>
 				</a>
 				<a href="#">
