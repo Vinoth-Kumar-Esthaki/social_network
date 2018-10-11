@@ -29,6 +29,8 @@ if($loginFlag){
 	<!-- javascript -->
 	<script type="text/javascript" src="assets/jquery/jquery.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+
 </head>
 <body>
 	<div class="top-bar">

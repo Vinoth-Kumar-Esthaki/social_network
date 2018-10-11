@@ -64,20 +64,21 @@ class Post{
                 }else{
                     $user_to_obj =new User($this->conn,$row['posted_to']);
                     $user_to_name = $user_to_obj->getFirstAndLastName();
-                    $user_to ="<a href='".$row['posted_to']."'>".$user_to_name."</a>";
+                    $user_to ="to <a href='".$row['posted_to']."'>".$user_to_name."</a>";
                 }
                 //check if the user who posted have an active account
                 $added_by_obj = new User($this->conn,$added_by);
-                $added_by_pic = $added_by_obj->getProfilePic();
-                $added_by_name = $added_by_obj->getFirstAndLastName();
-    
                 if($added_by_obj->isClosed()){
                     continue;
                 }
+                $added_by_pic = $added_by_obj->getProfilePic();
+                $added_by_name = $added_by_obj->getFirstAndLastName();
+    
+                
 
                 $user_logged_obj = new User($this->conn,$userLoggedIn);
             
-                if($user_logged_obj->isFriend($added_by)){
+                if($user_logged_obj->isFriend($added_by) || ($userLoggedIn == $added_by)){
                     if($num_iterations++ < $start){
                         continue;
                     }
