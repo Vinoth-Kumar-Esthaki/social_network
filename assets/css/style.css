@@ -257,3 +257,16 @@ textarea:focus{
 	width:200px;
 	display: inline;
 }
+.delete_button{
+	float:right;
+}
+.profile_main_column{
+	min-width: 675px;
+	float: left;
+	width: 70%;
+	z-index:-1;
+
+}
+.profile_info_bottom{
+	margin:10px 0 0 0;
+}
