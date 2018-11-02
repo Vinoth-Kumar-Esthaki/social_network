@@ -26,6 +26,11 @@
 				<?php 
 					echo "Posts: ".$userRow['num_posts']."<br>";
 					echo "Likes: ".$userRow['num_likes']."<br>";
+					$friends_str = ltrim($userRow['friend_array'],",");
+					$friends_str = rtrim($friends_str,",");
+					$friends = explode(",",$friends_str);
+					echo "Friends: ".count($friends);
+
 				?>
 			</div>
 		</div>
