@@ -1,5 +1,11 @@
 <?php
 require_once 'config/config.php';
+require_once 'includes/classes/User.php';
+require_once 'includes/classes/Post.php';
+require_once 'includes/classes/Message.php';
+require_once 'includes/classes/Utils.php';
+
+
 
 $loginFlag =  isset($_SESSION['success']) ? $_SESSION['success'] : false;
 

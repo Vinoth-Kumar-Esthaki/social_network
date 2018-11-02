@@ -1,4 +1,5 @@
 <?php
+
 class Utils{
     public static function timeFrame($date_time){
         $date_time_now = date("Y-m-d H:i:s");

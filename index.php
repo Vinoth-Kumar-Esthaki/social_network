@@ -1,7 +1,7 @@
 <?php
 	require_once 'includes/header.php';
-	require_once 'includes/classes/User.php';
-	require_once 'includes/classes/Post.php';
+	// require_once 'includes/classes/User.php';
+	// require_once 'includes/classes/Post.php';
 
 	if(isset($_POST['post'])){
 		$post = new Post($conn,$loggedInUser);
